@@ -108,3 +108,103 @@ File/database storage
 
 OTP/email simulation
 
+🎯 Project Objective
+To design a system that:
+
+Registers students with age and roll number validation
+
+Stores exam metadata like subject, date, and total marks
+
+Evaluates quiz performance against valid constraints
+
+Raises clear and meaningful errors using custom exceptions
+
+🔧 Features
+👦 Student Registration
+Ensures age is numeric and at least 10 years
+
+Prevents duplicate roll numbers across students
+
+Validates roll number uniqueness using a class-level registry
+
+🧾 Exam Creation
+Accepts subject name, exam date, and total marks
+
+Validates that maximum marks are non-negative integers
+
+
+
+
+Quiz mini project
+
+
+📊 Quiz Evaluation
+Accepts student and exam as inputs
+
+Validates scored marks within allowed limits
+
+Calculates and prints percentage
+
+Passes students scoring 40% or more
+
+⚠️ Custom Exceptions Used
+Exception Name	Trigger Condition
+UnderageStudentError	If student's age is below 10
+DuplicateRollError	If roll number is already registered
+InvalidMarksError	If quiz marks are out of valid range (negative or too high)
+InvalidExamDataError	If maximum exam marks are negative or not integer
+
+🧠 Learning Outcomes
+Use of exception classes to model real-world validation problems
+
+Proper object-oriented design, including encapsulation and class-level data
+
+Realistic simulation of a student evaluation workflow
+
+Understanding of constructor-level validation
+
+🚀 Code Flow (Non-Technical)
+Student Creation
+The system checks:
+
+Age must be numeric and ≥ 10
+
+Roll number must not already exist
+
+Exam Creation
+Exam is initialized with:
+
+Subject name
+
+Exam date (treated as a string here)
+
+Maximum allowed marks
+
+Quiz Submission
+
+The student’s score is validated against the exam’s max marks
+
+A result (Pass/Fail) is printed based on a 40% threshold
+
+Errors
+If anything goes wrong during student registration, exam setup, or quiz scoring, appropriate custom errors are raised and shown.
+
+✅ Example Output
+cpp
+Copy
+Edit
+Pass::Sandeep score 80.0
+Exam over
+Or, if an error:
+
+pgsql
+Copy
+Edit
+Roll no already exists
+Exam over
+📦 Future Enhancements (Suggestions)
+Add subject-wise history or transcript tracking
+
+Use datetime module to validate exam dates
+
+Store results in CSV or JSON format
